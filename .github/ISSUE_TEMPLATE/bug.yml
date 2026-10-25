@@ -1,0 +1,62 @@
+name: Bug
+description: Something that exists is broken
+type: Bug
+labels: [bug]
+projects: ["Saffron-Studio/1"]
+body:
+  - type: textarea
+    id: wrong
+    attributes:
+      label: What's wrong
+      description: One or two sentences on what happens.
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - World and regions
+        - Skills
+        - Combat and bosses
+        - Quests and dialogue
+        - Items and economy
+        - Account and social
+        - Client UI
+        - Server and infra
+        - Launcher
+        - Tooling
+        - Atlas
+    validations:
+      required: true
+  - type: input
+    id: code
+    attributes:
+      label: Code
+      description: file:line where it lives, checked on dev
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to see it
+      value: |
+        1.
+        2.
+
+        Expected:
+        Actual:
+    validations:
+      required: true
+  - type: input
+    id: reported-by
+    attributes:
+      label: Reported by
+      description: Quinton / player report #ticket / found during #N
+    validations:
+      required: true
+  - type: textarea
+    id: done
+    attributes:
+      label: Done when
+      value: "- [ ] "
+    validations:
+      required: true

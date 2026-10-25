@@ -1,0 +1,98 @@
+name: Story
+description: One buildable piece of an epic
+type: Story
+projects: ["Saffron-Studio/1"]
+body:
+  - type: input
+    id: player-gets
+    attributes:
+      label: What a player gets
+      description: One sentence, in player terms.
+    validations:
+      required: true
+  - type: textarea
+    id: driver
+    attributes:
+      label: Driver
+      description: What prompted this. Evidence in absolute numbers, not percentages.
+      value: |
+        Source: player requests | bug reports | Quinton's design | play-test finding | metric
+        Evidence:
+    validations:
+      required: true
+  - type: textarea
+    id: business-reason
+    attributes:
+      label: Business reason
+      description: What this does for Saffron, independent of who asked. It must still stand with the Driver deleted.
+      placeholder: e.g. fills a progression gap; closes a retention hole; unblocks a headline system; reduces support load; protects the economy
+    validations:
+      required: true
+  - type: dropdown
+    id: classification
+    attributes:
+      label: Classification
+      options:
+        - New content (does not exist in Saffron today)
+        - Enhancement to existing content
+    validations:
+      required: true
+  - type: input
+    id: enhances
+    attributes:
+      label: Enhances
+      description: For an enhancement, the existing content it changes (file/area refs).
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - World and regions
+        - Skills
+        - Combat and bosses
+        - Quests and dialogue
+        - Items and economy
+        - Account and social
+        - Client UI
+        - Server and infra
+        - Launcher
+        - Tooling
+        - Atlas
+    validations:
+      required: true
+  - type: input
+    id: epic
+    attributes:
+      label: Epic and definition
+      placeholder: "#<n>, docs/product/<slug>.md"
+  - type: textarea
+    id: exists
+    attributes:
+      label: What exists today
+      description: What is already built, with file refs. Write "nothing" only after checking.
+    validations:
+      required: true
+  - type: textarea
+    id: adds
+    attributes:
+      label: What this adds
+      value: "- "
+    validations:
+      required: true
+  - type: textarea
+    id: not-in
+    attributes:
+      label: Not in this story
+      value: "- "
+  - type: textarea
+    id: done
+    attributes:
+      label: Done when
+      value: "- [ ] "
+    validations:
+      required: true
+  - type: dropdown
+    id: size
+    attributes:
+      label: Size
+      options: [XS, S, M, L]

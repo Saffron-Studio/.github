@@ -1,0 +1,85 @@
+name: Epic
+description: A player-facing outcome built from several stories
+type: Epic
+labels: [epic]
+projects: ["Saffron-Studio/1"]
+body:
+  - type: input
+    id: goal
+    attributes:
+      label: Goal
+      description: The player-facing outcome.
+    validations:
+      required: true
+  - type: textarea
+    id: driver
+    attributes:
+      label: Driver
+      description: What prompted this. Evidence in absolute numbers, not percentages.
+      value: |
+        Source: player requests | bug reports | Quinton's design | play-test finding | metric
+        Evidence:
+    validations:
+      required: true
+  - type: textarea
+    id: business-reason
+    attributes:
+      label: Business reason
+      description: What this does for Saffron, independent of who asked. It must still stand with the Driver deleted.
+      placeholder: e.g. fills a progression gap; closes a retention hole; unblocks a headline system; reduces support load; protects the economy
+    validations:
+      required: true
+  - type: input
+    id: solved-when
+    attributes:
+      label: Solved when
+      description: The measurable objective from the definition.
+    validations:
+      required: true
+  - type: dropdown
+    id: classification
+    attributes:
+      label: Classification
+      options:
+        - New content (does not exist in Saffron today)
+        - Enhancement to existing content
+    validations:
+      required: true
+  - type: input
+    id: enhances
+    attributes:
+      label: Enhances
+      description: For an enhancement, the existing content it builds on.
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - World and regions
+        - Skills
+        - Combat and bosses
+        - Quests and dialogue
+        - Items and economy
+        - Account and social
+        - Client UI
+        - Server and infra
+        - Launcher
+        - Tooling
+        - Atlas
+    validations:
+      required: true
+  - type: input
+    id: definition
+    attributes:
+      label: Definition
+      description: Required before any stories are logged.
+      placeholder: docs/product/<slug>.md
+  - type: textarea
+    id: stories
+    attributes:
+      label: Stories
+      description: Sub-issues, logged by the orchestrator once Quinton approves them.
+      value: "- [ ] #"
+  - type: markdown
+    attributes:
+      value: "**Done when:** all sub-issues are closed and Quinton has played it."
